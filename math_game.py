@@ -3,19 +3,6 @@ import random
 import json
 import time    
 
-def difficulty():
-    diff = input("choose a difficulty 1-5")
-    if diff == 1:
-        number = range(2,5)
-    elif diff == 2:
-        nubmer = range(3,6)
-    elif diff == 2:
-        nubmer = range(4,7)
-    elif diff == 2:
-        nubmer = range(5,8)
-    elif diff == 2:
-        nubmer = range(6,9)
-
 filename = "math_data.json"
 
 def resort(excercises, e):
