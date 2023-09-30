@@ -3,7 +3,7 @@ import random
 import json
 import time    
 
-filename = "math_data.json"
+filename = "math_data.json"88S
 
 def resort(excercises, e):
     asked = e["good_cnt"] + e["bad_cnt"]
