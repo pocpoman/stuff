@@ -7,13 +7,9 @@ x = 0
 y = 0
 z = 0
 answer = 0
-scores_dict = {
-    "name":name,
-    "quest_cnt":None,
-    "correct_cnt":None
-}
-f = open("scores.json","w")
-f.close()
+scores_dict = {}
+
+
 def diff_(m):
     diff = 1
     if x > 4 and x < 8:
@@ -28,8 +24,8 @@ def diff_(m):
         diff = 6
 def store_scores(scores_dict):
     try:
-        with open("scores.json", "w+") as scores:
-            scores.write(json.dumps(scores_dict))
+        with open("scores.json", "a") as scores:
+            scores.write(json.dumps(scores_dict, indent = 4))
             scores.close()
     except:
         return
@@ -96,9 +92,18 @@ while x < 5:
         print("wrong")
         print(f"the correct answer is: {j[1]}")
         x += 1
-scores_dict["name"] = name
-scores_dict["correct_cnt"] = y
-scores_dict["quest_cnt"] = z
+
+user = {}
+user["correct_cnt"] = y
+user["quest_cnt"] = z
+if scores_dict.get(name):
+    if user["quest_cnt"] > scores_dict[name]["quest_cnt"]:
+        print()
+    else:
+        scores_dict[name] = user
+else:
+    scores_dict[name] = user
+
 print("the highest score is {?} out of {?}")
 print(f"{name}. you answered {y} question correctly out of {z}")
 store_scores(scores_dict)
