@@ -113,7 +113,6 @@ while answer != 0:
         question["answers"] = []
 
     question["times"].append(diff)
-    question["answers"].append(answer)
 
     if answer == 0:
         print("ok")
@@ -127,6 +126,8 @@ while answer != 0:
         print("wrong. it is ", num_1 * num_2, "\n\n")
         question["prob"] += 4000
         question["bad_cnt"] += 1
+        question["answers"].append(answer)
+
 
     if diff > 30:
         question["prob"] += 4000

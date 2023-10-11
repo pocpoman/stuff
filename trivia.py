@@ -10,18 +10,6 @@ answer = 0
 scores_dict = {}
 
 
-def diff_(m):
-    diff = 1
-    if x > 4 and x < 8:
-        diff = 2
-    if x > 8 and x < 12:
-        diff = 3
-    if x > 12 and x < 16:
-        diff = 4
-    if x > 16 and x < 20:
-        diff = 5
-    if x > 20 and x < 24:
-        diff = 6
 def store_scores(scores_dict):
     try:
         with open("scores.json", "a") as scores:
@@ -61,7 +49,40 @@ quest_list_1 = [
     ["What is the most abundant gas in Earth's atmosphere? ", "nitrogen"],
     ["What is the national flower of canada? ", "maple leaf"],
     ["What is the largest species of bear? ", "polar bear"],
-    ["Who is the author of 'Harry Potter' book series? ", "j.k. rowling"],
+    ["Who is the author of 'harry potter' book series? ", "j.k. rowling"],
+]
+quest_list_2 = [
+    ["in which year did World War ii end?", "1945"],
+    ["Who wrote the novel '1984'?", "george orwell"],
+    ["Which country is known as the land of the Rising Sun?", "japan"],
+    ["Who is the famous scientist known for his theory of evolution by natural selection?", "charles darwin"],
+    ["Who painted 'Starry night'?", "van gogh"],
+    ["What is the capital of brazil?", "brasília"],
+    ["Which gas do plants absorb and use for photosynthesis?", "co2"],
+    ["Who wrote the play 'hamlet'?", "William Shakespeare"],
+    ["Which element is the most abundant in the earth's crust?","oxygen"],
+    ["What is the main component of earth's outermost layer, the lithosphere?", "Silicon (Si)"],
+    ["Who is known for discovering the laws of motion and universal gravitation?", "isaac newton"]
+    ["Which gas do humans primarily inhale when they breathe in?", "nitrogen"],
+    ["What is the capital of South korea?", "Seoul"],
+    ["in which country was the game of chess believed to have originated?", "india"],
+    ["What is the chemical symbol for silver?", "ag"],
+    ["What is the process by which plants lose water vapor through small openings in their leaves?", "Transpiration"],
+    ["Who wrote 'The catcher in the Rye'?", "j.d. Salinger"],
+    ["What is the capital of china?", "beijing"],
+    ["Which gas is known as 'laughing gas'?", "n2o"],
+    ["What is the chemical symbol for iron?", "fe"],
+    ["What is the tallest tree species in the world?", "coast Redwood"],
+    ["Who was the first woman to win a nobel prize?", "marie curie"],
+    ["Which planet is known for its beautiful rings?", "Saturn"],
+    ["What is the chemical symbol for potassium?", "k"],
+    ["Who was the first person to set foot on the moon?", "neil armstrong"],
+    ["in which country is the great barrier Reef located?", "australia"],
+    ["What is the smallest continent by land area?", "australia"],
+    ["in which year did christopher columbus first reach the americas?", "1492"],
+    ["What is the capital of canada?", "ottawa"],
+    ["What is the main component of the earth's core?", "iron"],
+    ["Who is the famous scientist known for his theory of gravity?", "isaac newton"]
 ]
 
 while x < 5:
