@@ -2,47 +2,93 @@ import json
 
 
 def show_items(stuff):
-    x = 1
-    for i in stuff:
-        print(x,i,stuff[i])
-        x += 1
-
-
-def menu_(stuff,item):
     
-    menu = input("1:choose item, 2:show cart, 3:pay, 4:home page: ")
-    while item != "exit":
+    for i in stuff:
+        print(i["id"], i["name"], i["cost"])
+        
+
+
+def menu_(stuff,item_id):
+    print()
+    menu = input("1:choose item, 2:show cart, 3:pay: ")
+    while menu != "exit":
         if menu == "1":
-            item = input("type item name: ")
-            for i in stuff:
-                if item == i:
-                    cart[item] = item
-        return item, menu
+            while item_id != "exit":
+                item_id = input("type item number: ")
+                for i in stuff:
+                    if item_id == str(i["id"]):
+                        cart.append(i)
+                        break
+            else:
+                return item, menu
+        
+        elif menu == "2":
+            print()
+            show_items(cart)
+            cart_items = input("1:remove items, 2:exit cart")
+            if cart_items == "1":
+                removed_num = 0
+                while removed_num != "exit":
+                    removed_num = input("type item number you want to remove: ")
+                    for n in cart:
+                        if  removed_num == str(n["id"]):
+                            cart.remove(n)
+                            break
+            return item, menu
+        
+
+        elif menu == "3":
+            print()
+            total_cost = 0
+            for c in cart:
+                total_cost = total_cost + c["cost"]
+                if total_cost == 0:
+                    print("please choose an item before you pay:")
+            print("total cost is ",total_cost)
+            input("enter Card number: ")
+            input("enter Cardholder Name: ")
+            input("enter Expiry Date: ")
+            input("enter Security Code: ")
+            input("enter Billing Address: ")
+            break
+
+    return item, menu
+    
+    
             
 
 
 
-cart = {} 
-_items_ = {"t-shirt":34,
-        "sweatshirt":50,
-        "pants":41,
-        "pistol":654,
-        "15x9mm bullet":4.5
-        }
+cart = [] 
+_items_ = [
+        { "id":1, "name": "t-shirt", "cost":34},
+
+        { "name":"sweatshirt", "id":2, "cost":50},
+
+        {"name": "pants", "id":3,  "cost":41},
+
+        {"name":"pistol", "id":4, "cost":654},
+
+        {"name": "15x9mm bullet" ,"id":5, "cost":4.5}
+        ]
 item = None
 true_or_false = None
 show = None
 menu = None
+
+print("welcome to shop:")
+show = input("show items: ")
 while show or menu != "exit":
-    print("welcome to shop:")
-    show = input("1:show items, 2:show cart: ")
-    while show or menu != "exit":
+    
+    
+    if show == "yes":
+        show_items(_items_)
+        while menu != "exit":
+            true_or_false, menu = menu_(_items_,item)
+            if menu == "3":
+                exit()
+            
         
-        
-        if show == "1":
-            show_items(_items_)
-            while show == "1":
-                true_or_false, show = menu_(_items_,item)
 
         
 
