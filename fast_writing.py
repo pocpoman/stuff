@@ -15,7 +15,7 @@ def difficulty_():
     elif _difficulty_ == 2:
         difficulty = 7
     elif _difficulty_ == 3:
-        difficulty ==4
+        difficulty = 4
     return difficulty,_difficulty_
 def game_data(data,filename):
     try:
@@ -30,7 +30,23 @@ mistake = 0
 from inputimeout import inputimeout
 
 input_ = 0
-long_words = ["comfortable","a very long word","jujutsu kaisen", "replicate", "hamburger","people","excuse me"]
+long_words = ["comfortable",
+    "a very long word",
+    "jujutsu kaisen",
+    "replicate", 
+    "hamburger",
+    "people",
+    "luminosity",
+    "serendipity",
+    "eccentricity",
+    "versatility",
+    "camaraderie",
+    "tranquility",
+    "diligence",
+    "authenticity",
+    "resilience",
+    "equilibrium",
+    "excuse me"]
 input_2 = input("would you like to play a game: ")
 filename = "fast_writing_" + input("what is your name: ") + ".json"
 f = open(filename, "w")
@@ -51,7 +67,7 @@ while input_2 == "yes":
             input_ = inputimeout(f"write {binchiling}: ",timeout = difficulty)
             
         except:
-            input_ = 'Your time is over!'
+            input_ = "Your time is over!"
             print(input_)
         if input_ == "":
             print("ok")
@@ -78,6 +94,8 @@ while input_2 == "yes":
             q_1 = input("would you like choose a new difficulty:")
             if q_1 == "yes":
                 difficulty_()
+            else:
+                exit()
         time.sleep(1)
 
 
